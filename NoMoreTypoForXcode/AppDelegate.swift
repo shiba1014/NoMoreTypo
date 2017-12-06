@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NoMoreTypoForXcode
 //
-//  Created by 羽柴 彩月 on 2017/12/06.
+//  Created by Satsuki Hashiba on 2017/12/06.
 //  Copyright © 2017年 Satsuki Hashiba. All rights reserved.
 //
 

@@ -11,7 +11,36 @@
 		A329B5561FD7A5FB00A22F37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329B5551FD7A5FB00A22F37 /* ViewController.swift */; };
 		A329B5581FD7A5FB00A22F37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A329B5571FD7A5FB00A22F37 /* Assets.xcassets */; };
 		A329B55B1FD7A5FB00A22F37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A329B5591FD7A5FB00A22F37 /* Main.storyboard */; };
+		A329B56A1FD7A8AE00A22F37 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A329B5691FD7A8AE00A22F37 /* Cocoa.framework */; };
+		A329B56D1FD7A8AE00A22F37 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329B56C1FD7A8AE00A22F37 /* SourceEditorExtension.swift */; };
+		A329B56F1FD7A8AE00A22F37 /* CheckNamingTypoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329B56E1FD7A8AE00A22F37 /* CheckNamingTypoCommand.swift */; };
+		A329B5741FD7A8AE00A22F37 /* NoMoreTypo.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A329B5671FD7A8AE00A22F37 /* NoMoreTypo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A329B57A1FD7A93F00A22F37 /* CheckStringTypoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A329B5791FD7A93F00A22F37 /* CheckStringTypoCommand.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A329B5721FD7A8AE00A22F37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A329B5481FD7A5FB00A22F37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A329B5661FD7A8AE00A22F37;
+			remoteInfo = NoMoreTypo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A329B5781FD7A8AE00A22F37 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A329B5741FD7A8AE00A22F37 /* NoMoreTypo.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A329B5501FD7A5FB00A22F37 /* NoMoreTypoForXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoMoreTypoForXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +50,13 @@
 		A329B55A1FD7A5FB00A22F37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A329B55C1FD7A5FB00A22F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A329B55D1FD7A5FB00A22F37 /* NoMoreTypoForXcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoMoreTypoForXcode.entitlements; sourceTree = "<group>"; };
+		A329B5671FD7A8AE00A22F37 /* NoMoreTypo.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NoMoreTypo.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A329B5691FD7A8AE00A22F37 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A329B56C1FD7A8AE00A22F37 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		A329B56E1FD7A8AE00A22F37 /* CheckNamingTypoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNamingTypoCommand.swift; sourceTree = "<group>"; };
+		A329B5701FD7A8AE00A22F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A329B5711FD7A8AE00A22F37 /* NoMoreTypo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoMoreTypo.entitlements; sourceTree = "<group>"; };
+		A329B5791FD7A93F00A22F37 /* CheckStringTypoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStringTypoCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A329B5641FD7A8AE00A22F37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A329B56A1FD7A8AE00A22F37 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				A329B5521FD7A5FB00A22F37 /* NoMoreTypoForXcode */,
+				A329B56B1FD7A8AE00A22F37 /* NoMoreTypo */,
+				A329B5681FD7A8AE00A22F37 /* Frameworks */,
 				A329B5511FD7A5FB00A22F37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A329B5501FD7A5FB00A22F37 /* NoMoreTypoForXcode.app */,
+				A329B5671FD7A8AE00A22F37 /* NoMoreTypo.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +110,26 @@
 			path = NoMoreTypoForXcode;
 			sourceTree = "<group>";
 		};
+		A329B5681FD7A8AE00A22F37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A329B5691FD7A8AE00A22F37 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A329B56B1FD7A8AE00A22F37 /* NoMoreTypo */ = {
+			isa = PBXGroup;
+			children = (
+				A329B56C1FD7A8AE00A22F37 /* SourceEditorExtension.swift */,
+				A329B56E1FD7A8AE00A22F37 /* CheckNamingTypoCommand.swift */,
+				A329B5791FD7A93F00A22F37 /* CheckStringTypoCommand.swift */,
+				A329B5701FD7A8AE00A22F37 /* Info.plist */,
+				A329B5711FD7A8AE00A22F37 /* NoMoreTypo.entitlements */,
+			);
+			path = NoMoreTypo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,15 +140,34 @@
 				A329B54C1FD7A5FB00A22F37 /* Sources */,
 				A329B54D1FD7A5FB00A22F37 /* Frameworks */,
 				A329B54E1FD7A5FB00A22F37 /* Resources */,
+				A329B5781FD7A8AE00A22F37 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A329B5731FD7A8AE00A22F37 /* PBXTargetDependency */,
 			);
 			name = NoMoreTypoForXcode;
 			productName = NoMoreTypoForXcode;
 			productReference = A329B5501FD7A5FB00A22F37 /* NoMoreTypoForXcode.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A329B5661FD7A8AE00A22F37 /* NoMoreTypo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A329B5751FD7A8AE00A22F37 /* Build configuration list for PBXNativeTarget "NoMoreTypo" */;
+			buildPhases = (
+				A329B5631FD7A8AE00A22F37 /* Sources */,
+				A329B5641FD7A8AE00A22F37 /* Frameworks */,
+				A329B5651FD7A8AE00A22F37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoMoreTypo;
+			productName = NoMoreTypo;
+			productReference = A329B5671FD7A8AE00A22F37 /* NoMoreTypo.appex */;
+			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +180,10 @@
 				ORGANIZATIONNAME = "Satsuki Hashiba";
 				TargetAttributes = {
 					A329B54F1FD7A5FB00A22F37 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					A329B5661FD7A8AE00A22F37 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -113,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				A329B54F1FD7A5FB00A22F37 /* NoMoreTypoForXcode */,
+				A329B5661FD7A8AE00A22F37 /* NoMoreTypo */,
 			);
 		};
 /* End PBXProject section */
@@ -124,6 +215,13 @@
 			files = (
 				A329B5581FD7A5FB00A22F37 /* Assets.xcassets in Resources */,
 				A329B55B1FD7A5FB00A22F37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A329B5651FD7A8AE00A22F37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +237,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A329B5631FD7A8AE00A22F37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A329B56D1FD7A8AE00A22F37 /* SourceEditorExtension.swift in Sources */,
+				A329B56F1FD7A8AE00A22F37 /* CheckNamingTypoCommand.swift in Sources */,
+				A329B57A1FD7A93F00A22F37 /* CheckStringTypoCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A329B5731FD7A8AE00A22F37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A329B5661FD7A8AE00A22F37 /* NoMoreTypo */;
+			targetProxy = A329B5721FD7A8AE00A22F37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A329B5591FD7A5FB00A22F37 /* Main.storyboard */ = {
@@ -262,6 +378,7 @@
 		A329B5611FD7A5FB00A22F37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NoMoreTypoForXcode/NoMoreTypoForXcode.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -278,6 +395,7 @@
 		A329B5621FD7A5FB00A22F37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NoMoreTypoForXcode/NoMoreTypoForXcode.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +405,38 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shiba.NoMoreTypoForXcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		A329B5761FD7A8AE00A22F37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NoMoreTypo/NoMoreTypo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U6JP7S27NV;
+				INFOPLIST_FILE = NoMoreTypo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiba.NoMoreTypoForXcode.NoMoreTypo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		A329B5771FD7A8AE00A22F37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NoMoreTypo/NoMoreTypo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U6JP7S27NV;
+				INFOPLIST_FILE = NoMoreTypo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shiba.NoMoreTypoForXcode.NoMoreTypo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -308,6 +458,15 @@
 			buildConfigurations = (
 				A329B5611FD7A5FB00A22F37 /* Debug */,
 				A329B5621FD7A5FB00A22F37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A329B5751FD7A8AE00A22F37 /* Build configuration list for PBXNativeTarget "NoMoreTypo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A329B5761FD7A8AE00A22F37 /* Debug */,
+				A329B5771FD7A8AE00A22F37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
