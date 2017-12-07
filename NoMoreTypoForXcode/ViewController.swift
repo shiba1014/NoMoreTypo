@@ -23,11 +23,13 @@ class ViewController: NSViewController {
     }
     
     @IBAction func pushedEnableExtensionButton(_ sender: NSButton) {
-        
+        NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Library/PreferencePanes/Extensions.prefPane"))
     }
 
     @IBAction func pushedGithubButton(_ sender: NSButton) {
-        
+        if let url = URL(string: "https://github.com/shiba1014/NoMoreTypo") {
+            NSWorkspace.shared.open(url)
+        }
     }
 }
 

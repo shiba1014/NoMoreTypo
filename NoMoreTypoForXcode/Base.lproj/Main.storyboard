@@ -134,7 +134,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aea-va-Ht8" secondAttribute="height" multiplier="1:1" id="pKg-w2-hqh"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Github Button" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="56Z-EZ-si5">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GitHub" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="56Z-EZ-si5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -142,14 +142,6 @@
                                     <action selector="pushedGithubButton:" target="XfG-lQ-9wD" id="03s-ov-LIG"/>
                                 </connections>
                             </button>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mWU-ce-tqw">
-                                <rect key="frame" x="20" y="78" width="180" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="FZB-5d-40L"/>
-                                    <constraint firstAttribute="width" secondItem="mWU-ce-tqw" secondAttribute="height" multiplier="1:1" id="wP4-e6-ozh"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="faX-Ka-bEJ"/>
-                            </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-h7-OzP">
                                 <rect key="frame" x="70" y="53" width="81" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NoMoreTypo" id="Qdj-SZ-HXW">
@@ -158,6 +150,14 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mWU-ce-tqw">
+                                <rect key="frame" x="20" y="78" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="FZB-5d-40L"/>
+                                    <constraint firstAttribute="width" secondItem="mWU-ce-tqw" secondAttribute="height" multiplier="1:1" id="wP4-e6-ozh"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Logo" id="faX-Ka-bEJ"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="SAX-hP-0XV" firstAttribute="centerX" secondItem="D93-qd-94R" secondAttribute="centerX" id="2jo-mf-83Z"/>
@@ -168,8 +168,9 @@
                             <constraint firstItem="SAX-hP-0XV" firstAttribute="top" secondItem="Uje-h7-OzP" secondAttribute="bottom" constant="8" id="J7W-3t-C1n"/>
                             <constraint firstAttribute="trailing" secondItem="mWU-ce-tqw" secondAttribute="trailing" constant="20" id="NRy-Jz-C3M"/>
                             <constraint firstItem="aea-va-Ht8" firstAttribute="height" secondItem="SAX-hP-0XV" secondAttribute="height" id="Yti-LG-CNZ"/>
-                            <constraint firstItem="aea-va-Ht8" firstAttribute="leading" secondItem="SAX-hP-0XV" secondAttribute="trailing" constant="8" id="b8o-uN-orX"/>
+                            <constraint firstItem="aea-va-Ht8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SAX-hP-0XV" secondAttribute="trailing" symbolic="YES" id="b8o-uN-orX"/>
                             <constraint firstAttribute="bottom" secondItem="SAX-hP-0XV" secondAttribute="bottom" constant="20" id="gYF-l1-ndE"/>
+                            <constraint firstAttribute="trailing" secondItem="aea-va-Ht8" secondAttribute="trailing" constant="11" id="xhq-5s-a7f"/>
                             <constraint firstItem="Uje-h7-OzP" firstAttribute="top" secondItem="mWU-ce-tqw" secondAttribute="bottom" constant="8" id="y0d-a4-fHV"/>
                             <constraint firstItem="Uje-h7-OzP" firstAttribute="centerX" secondItem="D93-qd-94R" secondAttribute="centerX" id="zOa-py-fzR"/>
                         </constraints>
@@ -180,4 +181,8 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GitHub" width="32" height="32"/>
+        <image name="Logo" width="512" height="512"/>
+    </resources>
 </document>
