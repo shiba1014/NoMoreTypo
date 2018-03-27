@@ -18,12 +18,9 @@ class CheckStringTypoCommand: NSObject, XCSourceEditorCommand {
             let line = invocation.buffer.lines[lineIndex] as! String
             
             let strings = getStrings(from: line)
-            for string in strings {
-                let words = getWords(from: string)
-                for word in words {
-                    if let message = checkTypo(word: word) {
-                        typoLines.append((lineIndex, message))
-                    }
+            strings.flatMap { getWords(from: $0) }.forEach {
+                if let message = checkTypo(word: $0) {
+                    typoLines.append((lineIndex, message))
                 }
             }
         }
@@ -48,13 +45,7 @@ private extension CheckStringTypoCommand {
             let regex = try NSRegularExpression(pattern: "\"[^\"]+\"", options: NSRegularExpression.Options())
             let range = NSRange(0..<line.count)
             let results = regex.matches(in: line, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
-            var strings: [String] = []
-            
-            for result in results {
-                let string = (line as NSString).substring(with: result.range)
-                strings.append(string)
-            }
-            return strings
+            return results.flatMap { (line as NSString).substring(with: $0.range) }
         } catch {
             return []
         }
@@ -65,12 +56,7 @@ private extension CheckStringTypoCommand {
             let regex = try NSRegularExpression(pattern: "(?!\\.)[a-zA-Z][a-z]+", options: NSRegularExpression.Options())
             let range = NSRange(0..<name.count)
             let results = regex.matches(in: name, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
-            var words: [String] = []
-            for result in results {
-                let word = (name as NSString).substring(with: result.range)
-                words.append(word)
-            }
-            return words
+            return results.flatMap { (name as NSString).substring(with: $0.range) }
         } catch {
             return []
         }

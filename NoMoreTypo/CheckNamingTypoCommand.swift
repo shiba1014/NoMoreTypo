@@ -19,12 +19,9 @@ class CheckNamingTypoCommand: NSObject, XCSourceEditorCommand {
             let names = getNames(from: line)
             if names.count == 0 { continue }
             
-            for name in names {
-                let words = getWords(from: name)
-                for word in words {
-                    if let message = checkTypo(word: word) {
-                        typoLines.append((lineIndex, message))
-                    }
+            names.flatMap { getWords(from: $0) }.forEach {
+                if let message = checkTypo(word: $0) {
+                    typoLines.append((lineIndex, message))
                 }
             }
         }
@@ -49,13 +46,7 @@ private extension CheckNamingTypoCommand {
             let regex = try NSRegularExpression(pattern: "(?<=(^|\\s)(let|var|func|class|enum|struct)\\s)[a-zA-Z0-9_]+", options: NSRegularExpression.Options())
             let range = NSRange(0..<line.count)
             let results = regex.matches(in: line, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
-            var names: [String] = []
-            
-            for result in results {
-                let name = (line as NSString).substring(with: result.range)
-                names.append(name)
-            }
-            return names
+            return results.flatMap { (line as NSString).substring(with: $0.range) }
         } catch {
             return []
         }
@@ -63,15 +54,15 @@ private extension CheckNamingTypoCommand {
     
     func getWords(from name: String) -> [String] {
         do {
-            let regex = try NSRegularExpression(pattern: "[a-zA-Z][a-z]+", options: NSRegularExpression.Options())
+            let regrex = try NSRegularExpression(pattern: "[a-zA-Z][a-z]+", options: NSRegularExpression.Options())
             let range = NSRange(0..<name.count)
-            let results = regex.matches(in: name, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
+            let results = regrex.matches(in: name, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
             var words: [String] = []
             for result in results {
                 let word = (name as NSString).substring(with: result.range)
                 words.append(word)
             }
-            return words
+            return results.flatMap { (name as NSString).substring(with: $0.range) }
         } catch {
             return []
         }
