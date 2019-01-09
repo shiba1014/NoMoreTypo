@@ -18,10 +18,11 @@ class CheckStringTypoCommand: NSObject, XCSourceEditorCommand {
             let line = invocation.buffer.lines[lineIndex] as! String
             
             let strings = getStrings(from: line)
-            strings.flatMap { getWords(from: $0) }.forEach {
-                if let message = checkTypo(word: $0) {
-                    typoLines.append((lineIndex, message))
-                }
+            strings.flatMap { getWords(from: $0) }
+                .forEach {
+                    if let message = checkTypo(word: $0) {
+                        typoLines.append((lineIndex, message))
+                    }
             }
         }
         
@@ -45,7 +46,7 @@ private extension CheckStringTypoCommand {
             let regex = try NSRegularExpression(pattern: "\"[^\"]+\"", options: NSRegularExpression.Options())
             let range = NSRange(0..<line.count)
             let results = regex.matches(in: line, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
-            return results.flatMap { (line as NSString).substring(with: $0.range) }
+            return results.compactMap { (line as NSString).substring(with: $0.range) }
         } catch {
             return []
         }
@@ -56,7 +57,7 @@ private extension CheckStringTypoCommand {
             let regex = try NSRegularExpression(pattern: "(?!\\.)[a-zA-Z][a-z]+", options: NSRegularExpression.Options())
             let range = NSRange(0..<name.count)
             let results = regex.matches(in: name, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
-            return results.flatMap { (name as NSString).substring(with: $0.range) }
+            return results.compactMap { (name as NSString).substring(with: $0.range) }
         } catch {
             return []
         }

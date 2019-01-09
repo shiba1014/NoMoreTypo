@@ -19,10 +19,11 @@ class CheckNamingTypoCommand: NSObject, XCSourceEditorCommand {
             let names = getNames(from: line)
             if names.count == 0 { continue }
             
-            names.flatMap { getWords(from: $0) }.forEach {
-                if let message = checkTypo(word: $0) {
-                    typoLines.append((lineIndex, message))
-                }
+            names.flatMap { getWords(from: $0) }
+                .forEach {
+                    if let message = checkTypo(word: $0) {
+                        typoLines.append((lineIndex, message))
+                    }
             }
         }
         
@@ -46,7 +47,7 @@ private extension CheckNamingTypoCommand {
             let regex = try NSRegularExpression(pattern: "(?<=(^|\\s)(let|var|func|class|enum|struct)\\s)[a-zA-Z0-9_]+", options: NSRegularExpression.Options())
             let range = NSRange(0..<line.count)
             let results = regex.matches(in: line, options: NSRegularExpression.MatchingOptions.reportCompletion, range: range)
-            return results.flatMap { (line as NSString).substring(with: $0.range) }
+            return results.compactMap { (line as NSString).substring(with: $0.range) }
         } catch {
             return []
         }
@@ -62,7 +63,7 @@ private extension CheckNamingTypoCommand {
                 let word = (name as NSString).substring(with: result.range)
                 words.append(word)
             }
-            return results.flatMap { (name as NSString).substring(with: $0.range) }
+            return results.compactMap { (name as NSString).substring(with: $0.range) }
         } catch {
             return []
         }
